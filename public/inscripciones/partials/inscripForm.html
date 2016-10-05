@@ -1,0 +1,32 @@
+<form class="form-horizontal" ng-submit="guardarInscrip()">
+  <fieldset>
+    <legend>Datos de la inscripción</legend>
+
+    <div class="form-group" ng-controller="AlumnosListCtrl">
+      <label for="selectAlumno" class="col-lg-2 control-label">Alumno</label>
+      <div class="col-lg-8" >
+        <select class="form-control" id="selectAlumno" ng-model="inscrip.alumno._id" 
+                ng-options="alumno._id as alumno.nombre + ' ' + alumno.apellido for alumno in alumnos">
+            <option value="">Seleccione un alumno</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="form-group" ng-controller="CursosListCtrl">
+      <label for="selectCurso" class="col-lg-2 control-label">Curso</label>
+      <div class="col-lg-8">
+        <select class="form-control" id="selectCurso" ng-model="inscrip.curso._id" 
+                ng-options="curso._id as curso.nombre for curso in cursos">
+            <option value="">Seleccione un curso</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-lg-8 col-lg-offset-2">
+      <input type="submit" value="Guardar" class="btn btn-success" />
+      <input type="button" value="Limpiar" class="btn btn-danger" ng-click="limpiarDatos()" />
+      </div>
+    </div>
+  </fieldset>
+</form>

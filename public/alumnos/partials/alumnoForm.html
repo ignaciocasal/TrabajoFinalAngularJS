@@ -1,0 +1,62 @@
+<form class="form-horizontal" ng-submit="guardarAlumno()">
+  <fieldset>
+    <legend>Datos del alumno</legend>
+
+    <div class="form-group">
+      <label for="inputNombre" class="col-lg-2 control-label">Nombre</label>
+      <div class="col-lg-8">
+        <input required type="text" id="inputNombre" class="form-control" ng-model="alumno.nombre" placeholder="Nombre" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputApellido" class="col-lg-2 control-label">Apellido</label>
+      <div class="col-lg-8">
+        <input required type="text" id="inputApellido" class="form-control" ng-model="alumno.apellido" placeholder="Apellido" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="selectLocalidad" class="col-lg-2 control-label">Localidad</label>
+      <div class="col-lg-8">
+        <select required class="form-control" id="selectLocalidad" ng-model="alumno.localidad">
+          <option value="" selected disabled>Seleccione una localidad</option>
+          <option>Comodoro Rivadavia</option>
+          <option>Puerto Madryn</option>
+          <option>Trelew</option>
+          <option>Neuquen</option>
+          <option>Esquel</option>
+          <option>Ushuaia</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputDomicilio" class="col-lg-2 control-label">Domicilio</label>
+      <div class="col-lg-8">
+        <input type="text" id="inputDomicilio" class="form-control" ng-model="alumno.domicilio" placeholder="Domicilio" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputTelefono" class="col-lg-2 control-label">Telefono</label>
+      <div class="col-lg-8">
+        <input type="text" id="inputTelefono" class="form-control" ng-model="alumno.telefono" placeholder="Telefono" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+      <div class="col-lg-8">
+        <input required type="email" id="inputEmail" class="form-control" ng-model="alumno.email" placeholder="Email" />
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <div class="col-lg-8 col-lg-offset-2">
+      <input type="submit" value="Guardar" class="btn btn-success" />
+      <input type="button" value="Limpiar" class="btn btn-danger" ng-click="limpiarDatos()" />
+      </div>
+    </div>
+  </fieldset>
+</form>

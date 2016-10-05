@@ -1,0 +1,43 @@
+<form class="form-horizontal" ng-submit="guardarCurso()">
+  <fieldset>
+    <legend>Datos del curso</legend>
+
+    <div class="form-group">
+      <label for="inputNombre" class="col-lg-2 control-label">Nombre</label>
+      <div class="col-lg-8">
+        <input required type="text" id="inputNombre" class="form-control" ng-model="curso.nombre" placeholder="Nombre" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputDescripcion" class="col-lg-2 control-label">Descripción</label>
+      <div class="col-lg-8">
+        <input required type="text" id="inputDescripcion" class="form-control" ng-model="curso.descripcion" placeholder="Descripcion" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="selectDocente" class="col-lg-2 control-label">Docente</label>
+      <div class="col-lg-8">
+        <select required class="form-control" id="selectDocente" ng-model="curso.docente">
+          <option value="" selected disabled>Seleccione un docente</option>
+          <option>A.P.U. Juan Manuel Cortéz</option>
+          <option>Esp. Lic. Damián Barry</option>
+          <option>Luis Ignacio Aita</option>
+          <option>Dr. Ing. Leonardo Ordinez</option>
+          <option>Dr. José Urriza</option>
+          <option>Lic. Francisco Paez</option>
+          <option>Lic. Nahuel Defossé</option>
+          <option>Lic. Diego Van Haaster</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <div class="col-lg-8 col-lg-offset-2">
+      <input type="submit" value="Guardar" class="btn btn-success" />
+      <input type="button" value="Limpiar" class="btn btn-danger" ng-click="limpiarDatos()" />
+      </div>
+    </div>
+  </fieldset>
+</form>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+        
+        <title> EIPsys </title>
+        <link rel="stylesheet" href="//bootswatch.com/yeti/bootstrap.min.css">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-messages.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
+
+        <!-- NAVIGATION -->
+        <script src="navigation/js/navComp.js"></script>  
+
+        <script src="js/myApp.js"></script>
+        <script src="js/routes.js"></script>
+
+        <!-- <script src="js/controllers/script.js"></script> -->
+        <script src="alumnos/js/modules/alumnosModule.js"></script>  
+        <script src="alumnos/js/services/alumnosSrv.js"></script>
+        <script src="alumnos/js/controllers/alumnosListCtrl.js"></script>
+        <script src="alumnos/js/controllers/alumnosFormCtrl.js"></script>
+
+        <script src="cursos/js/modules/cursosModule.js"></script>  
+        <script src="cursos/js/services/cursosSrv.js"></script>
+        <script src="cursos/js/controllers/cursosListCtrl.js"></script>
+        <script src="cursos/js/controllers/cursosFormCtrl.js"></script>
+
+        <script src="inscripciones/js/modules/inscripsModule.js"></script>  
+        <script src="inscripciones/js/services/inscripsSrv.js"></script>
+        <script src="inscripciones/js/controllers/inscripsListCtrl.js"></script>
+        <script src="inscripciones/js/controllers/inscripsFormCtrl.js"></script>
+
+    </head>
+    <body>
+        <!-- NAVBAR -->
+        <navigation></navigation>
+
+        <div class="container" ng-view=""></div>
+
+        <div ng-include src="'/partials/footer.html'"></div>
+
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<div ng-init="cargarInscrips()">
+    <h1> Inscripciones </h1>
+    <table class="table table-striped table-hover ">
+        <thead>
+            <tr>
+                <th>Alumno</th>
+                <th>Curso</th>
+                <th>  </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="inscrip in inscrips">
+                <td> {{inscrip.alumno._id}} </td>
+                <td> {{inscrip.curso.nombre}} </td>
+                
+                <td> <a href="#/inscrip/{{inscrip._id}}" class="btn btn-info" ng-click="recuperarInscrip()"> <i class="glyphicon glyphicon-pencil"></i> </a> 
+                <a href="javascript:void(0);" class="btn btn-danger" ng-click="eliminarInscrip(inscrip._id)"> <i class="glyphicon glyphicon-remove"></i> </a> </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
