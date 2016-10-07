@@ -1,7 +1,7 @@
 (function () {
 	'use strict';
 
-	angular.module('Curso')
+	angular.module('Inscrip')
 		.factory('InscripsSrv', ['$http', function($http){
 			return {
 				cargar: function(callback){
@@ -16,10 +16,17 @@
 							}
 						)
 				},
-				guardar: function(inscrip, callback){
+				guardar: function(ins, callback){
+					var inscrip = {
+						alumno: ins.alumno,
+						curso: ins.curso
+					};
+
 					var config = {
 					 params: inscrip
 					};
+
+					console.log(inscrip);
 
 					$http
 						.post('/inscrip/guardar', inscrip, config)

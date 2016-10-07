@@ -9,11 +9,11 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="inscrip in inscrips">
-                <td> {{inscrip.alumno._id}} </td>
-                <td> {{inscrip.curso.nombre}} </td>
+            <tr ng-repeat="inscrip in inscrips track by $index">
+                <td> {{inscrip.alumno.nombre}} {{inscrip.alumno.apellido}}</td>
+                <td> {{inscrip.curso.descripcion}} </td>
                 
-                <td> <a href="#/inscrip/{{inscrip._id}}" class="btn btn-info" ng-click="recuperarInscrip()"> <i class="glyphicon glyphicon-pencil"></i> </a> 
+                <td>
                 <a href="javascript:void(0);" class="btn btn-danger" ng-click="eliminarInscrip(inscrip._id)"> <i class="glyphicon glyphicon-remove"></i> </a> </td>
             </tr>
         </tbody>

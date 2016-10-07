@@ -14,7 +14,7 @@
 					return alert('Ocurrió un error buscando las inscripciones: ' + err)
 				}
 				scope.inscrips = res;
-				alert(scope.inscrips.alumno)
+	
 			});
 		}
 
