@@ -37,5 +37,11 @@
 		};
 	}).config(function ($httpProvider) {
 		$httpProvider.interceptors.push('authInterceptor');
+	})
+
+	.filter('felicitar', function() {
+	 return function(name) {
+	    return 'Felicitaciones, ' + name + ' ha sido inscrito con éxito!';
+	  };
 	});
 })();

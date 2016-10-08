@@ -10,8 +10,8 @@
         </thead>
         <tbody>
             <tr ng-repeat="inscrip in inscrips track by $index">
-                <td> {{inscrip.alumno.nombre}} {{inscrip.alumno.apellido}}</td>
-                <td> {{inscrip.curso.descripcion}} </td>
+                <td> {{inscrip.alumno}}</td>
+                <td> {{inscrip.curso}} </td>
                 
                 <td>
                 <a href="javascript:void(0);" class="btn btn-danger" ng-click="eliminarInscrip(inscrip._id)"> <i class="glyphicon glyphicon-remove"></i> </a> </td>

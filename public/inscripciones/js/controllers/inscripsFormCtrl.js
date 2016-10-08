@@ -15,10 +15,10 @@
 					return alert('Ocurrió un error guardando los inscripciones: ' + console.log(err));
 				}
 				
-				$window.location.href = '#/inscripciones';
+				// $window.location.href = '#/inscripciones';
 				
 				scope.inscrip._id = res._id;
-				scope.limpiarDatos();
+				// scope.limpiarDatos();
 			});
 
    		};

@@ -1,12 +1,12 @@
-<form class="form-horizontal" ng-submit="guardarInscrip()">
+<form class="form-horizontal" ng-submit="guardarInscrip();submitted=true">
   <fieldset>
     <legend>Datos de la inscripción</legend>
 
-    <div class="form-group" ng-controller="AlumnosListCtrl">
+    <div class="form-group" ng-init="submitted=false" ng-controller="AlumnosListCtrl">
       <label for="selectAlumno" class="col-lg-2 control-label">Alumno</label>
       <div class="col-lg-8" >
         <select class="form-control" id="selectAlumno" ng-model="inscrip.alumno" 
-                ng-options="alumno._id as alumno.nombre + ' ' + alumno.apellido for alumno in alumnos">
+                ng-options="alumno as alumno.nombre + ' ' + alumno.apellido for alumno in alumnos">
             <option value="">Seleccione un alumno</option>
         </select>
       </div>
@@ -16,7 +16,7 @@
       <label for="selectCurso" class="col-lg-2 control-label">Curso</label>
       <div class="col-lg-8">
         <select class="form-control" id="selectCurso" ng-model="inscrip.curso" 
-                ng-options="curso._id as curso.nombre for curso in cursos">
+                ng-options="curso as curso.nombre for curso in cursos">
             <option value="">Seleccione un curso</option>
         </select>
       </div>
@@ -30,3 +30,8 @@
     </div>
   </fieldset>
 </form>
+
+
+<div>
+  <strong ng-bind="inscrip.alumno.nombre+' ' +inscrip.alumno.apellido | felicitar " ng-show="submitted"></strong>
+</div>
