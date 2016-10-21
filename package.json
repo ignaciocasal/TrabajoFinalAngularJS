@@ -1,13 +1,22 @@
 {
-  "name": "application-name",
+  "name": "eipsys",
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node app.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "express": "3.4.7",
     "jade": "*",
     "mongoose": "*"
-  }
+  },
+  "description": "El sistema se encargá de gestionar los alumnos, los cursos y las inscripciones a los mismos.",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "http://fipmgit.no-ip.biz:8102/ignacio.casal/misEjerciciosNode.git"
+  },
+  "author": "Ignacio Casal",
+  "license": "ISC"
 }
