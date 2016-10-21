@@ -1,3 +1,5 @@
+<!-- index.html -->
+
 <!DOCTYPE html>
 <html ng-app="myApp">
     <head>
@@ -7,6 +9,7 @@
         <title> EIPsys </title>
         <link rel="stylesheet" href="//bootswatch.com/yeti/bootstrap.min.css">
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/style.css">
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-messages.min.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
@@ -39,8 +42,49 @@
         <navigation></navigation>
 
         <div class="container" ng-view=""></div>
+        <br>
+        <div class="container">  
+            <h2>Ultimos inscritos</h2>
+            <div id="ultimos-inscritos"></div>
+        </div>
 
-        <div ng-include src="'/partials/footer.html'"></div>
+        <script src="socket.io.js"></script>
+        <script>
+            var socket = io.connect('http://localhost:8080', { 'forceNew': true });
+
+            socket.on('messages', function(data) {  
+              console.log(data);
+              render(data);
+            })
+
+            function render (data) {  
+              var html = data.map(function(elem, index) {
+                return(`<div>
+                          El alumno <strong>${elem.alumno}</strong> ha sido inscrito en el curso 
+                          <em>${elem.curso}</em>
+                        </div>`);
+              }).join(" ");
+
+              document.getElementById('ultimos-inscritos').innerHTML = html;
+            }
+
+            function addMessage(e) {  
+                var selectAlumno = document.getElementById("selectAlumno");
+                var alumno = selectAlumno.options[selectAlumno.selectedIndex].text;
+                var selectCurso = document.getElementById("selectCurso");
+                var curso = selectCurso.options[selectCurso.selectedIndex].text;
+                
+                var message = {
+                    alumno: alumno,
+                    curso: curso
+                };
+
+                socket.emit('new-message', message);
+                return false;
+            }
+        </script>
+        <br/>
+        <div id="footer" ng-include src="'/partials/footer.html'"></div>
 
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>

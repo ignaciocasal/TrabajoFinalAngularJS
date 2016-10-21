@@ -1,4 +1,4 @@
-<form class="form-horizontal" ng-submit="guardarInscrip();submitted=true">
+<form class="form-horizontal" ng-submit="guardarInscrip();submitted=true" onsubmit="return addMessage(this)">
   <fieldset>
     <legend>Datos de la inscripción</legend>
 
@@ -35,3 +35,4 @@
 <div>
   <strong ng-bind="inscrip.alumno.nombre+' ' +inscrip.alumno.apellido | felicitar " ng-show="submitted"></strong>
 </div>
+
