@@ -1,4 +1,20 @@
-// declare a module
+/*
+# EIPsys
+## Descripcion
+El sistema se encargará de gestionar los alumnos, los cursos y las inscripciones a los mismos.
+
+## Features
+1. Agregar alumnos
+2. Editar alumnos
+3. Eliminar alumnos
+4. Agregar cursos
+5. Editar cursos
+6. Eliminar cursos
+7. Agregar inscripciones
+8. Eliminar inscripciones
+
+*/
+
 (function () {
 	'use strict';
 	angular.module('myApp', [

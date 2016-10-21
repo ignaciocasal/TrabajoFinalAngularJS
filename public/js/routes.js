@@ -1,4 +1,4 @@
-// declare a module
+
 (function () {
 	'use strict';
 	angular.module('MyRoutes', [])
